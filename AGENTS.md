@@ -73,3 +73,12 @@
 - **把「没查到」说成「没问题」**：`未检出` 要写成「没有扫描到。这不等于安全。」
 - **同一句标签重复铺满**：每行前面都加「值得看一眼：」。
 - **为不可能发生的错误加步骤**：装前用一屏能力清单拦人，而其中没有一条是用户能采纳的。
+
+---
+
+## 五、项目事实（供工程定位，不设产品约束）
+
+- **形态**：DSH（DeepSeek Harness）的 Cordis 插件，npm 包 `dshmarket`，TypeScript。交付物是插件库（`build` 产出 `lib/`），挂在 DSH 宿主的 `webServer` / `shell` 服务上运行，**不能独立启动，也不做独立部署**。平台侧 `project_type = ""`、`preview_enable = "disabled"`、无 `[deploy]`。
+- **技术栈**：`@deepseek-ai/cordis` 插件框架 + React 客户端（`client/`）+ tsdown 构建 + vitest 测试。包管理器为 npm（`package-lock.json`）。Node ≥24、pnpm ≥9 可用。
+- **常用命令**：`npm run typecheck`（纯类型检查）、`npm run build`（构建 lib + client）、`npm test`（vitest）、`npm run check`（typecheck + build + restart-smoke）。
+- **关键入口**：`src/index.ts`（宿主挂载入口）→ `src/routes.ts`（HTTP 路由）；客户端在 `client/`；本地化在 `locale/`。

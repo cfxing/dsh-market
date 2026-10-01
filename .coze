@@ -1,0 +1,12 @@
+[project]
+sub_id = "94a04e7c"
+name = "dsh-market"
+requires = ["nodejs-24"]
+project_type = ""
+version = "0.1.9"
+
+[preview]
+preview_enable = "disabled"
+
+[subprojects]
+path = ["."]
