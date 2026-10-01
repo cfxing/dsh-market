@@ -18,3 +18,4 @@ data/registry-snapshot.json
 # Coze workspace metadata (sandbox/tooling generated; not part of the plugin).
 .coze
 .codegraph/
+AGENTS.md
